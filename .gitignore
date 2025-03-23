@@ -12,3 +12,14 @@ docs/
 
 # Dotenv file
 .env
+
+# Ignore dependencies (should be installed via package.json)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build artifacts (optional)
+dist/
+build/
+broadcast/

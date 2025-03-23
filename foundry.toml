@@ -3,4 +3,11 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+evm_version = "Istanbul"
+
+[rpc_endpoints]
+devnet =  "https://network.ambrosus-dev.io/"
+testnet = "https://network.ambrosus-test.io"
+mainnet = "https://network.ambrosus.io"
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
