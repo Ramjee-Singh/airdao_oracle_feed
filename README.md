@@ -24,7 +24,7 @@ Ensure the following are installed:
 
 ## 🛠 Setup Instructions
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 ```sh
 git clone https://github.com/Ramjee-Singh/airdao_oracle_feed.git
 cd airdao_oracle_feed
