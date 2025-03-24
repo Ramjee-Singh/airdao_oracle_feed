@@ -1,66 +1,46 @@
-## Foundry
+# AirDAO Oracle Price Feed
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project implements an Oracle price feed for AirDAO, fetching real-time prices and updating smart contracts.
 
-Foundry consists of:
+## 🚀 Features
+- Fetches token prices and updates the smart contract.
+- Listens for `PriceUpdated` events.
+- Uses Foundry for smart contract development.
+- Uses Node.js scripts for interaction.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+---
 
-## Documentation
+## 📌 Prerequisites
 
-https://book.getfoundry.sh/
+Ensure the following are installed:
+- **Node.js** (v18+ recommended) → [Download Here](https://nodejs.org/)
+- **NPM** (Comes with Node.js)
+- **Git** → [Download Here](https://git-scm.com/)
+- **Foundry** → [Install Foundry](https://book.getfoundry.sh/getting-started/installation)
+- **MSYS2** (if on Windows) → [Download Here](https://www.msys2.org/)
+- **AirDAO Wallet Private Key** (for contract interactions)  https://docs.airdao.io/about-airdao/the-airdao-network
 
-## Usage
+---
 
-### Build
+## 🛠 Setup Instructions
 
-```shell
-$ forge build
-```
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/Ramjee-Singh/airdao_oracle_feed.git
+cd airdao_oracle_feed
 
-### Test
+### Set Up Environment Variables
+    Create a .env file in the root directory and add
+    RPC_URL_HTTP="https://your_rpc_url"
+    CONTRACT_ADDRESS="0xYourContractAddress"
+    PRIVATE_KEY="your_private_key"
 
-```shell
-$ forge test
-```
+### Running the Project
+  forge script script/TokenPriceOracle.s.sol --rpc-url $RPC_URL_HTTP --private-key $PRIVATE_KEY --broadcast
+### Start the Listener (for events)
+  node script/listener.js
+### Start Price Updater (random price updates every 5 sec)
+  node script/updateprice.js
 
-### Format
 
-```shell
-$ forge fmt
-```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
